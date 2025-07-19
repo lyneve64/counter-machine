@@ -17,42 +17,43 @@ with open(sys.argv[1], newline='') as file:
         instructions.extend(row)
 
 while running:
-    if instructions[instruction][:3] == "inc":
+    stripped_instruction = instructions[instruction].replace(" ","")
+    if stripped_instruction[:3] == "inc":
         print(instructions[instruction])
-        registers[instructions[instruction][3]] += 1
+        registers[stripped_instruction[3]] += 1
         instruction += 1
         print(registers)
 
-    elif instructions[instruction][:3] == "dec":
+    elif stripped_instruction[:3] == "dec":
         print(instructions[instruction])
-        registers[instructions[instruction][3]] -= 1
+        registers[stripped_instruction[3]] -= 1
         instruction += 1
         print(registers)
 
-    elif instructions[instruction][:3] == "jez":
+    elif stripped_instruction[:3] == "jez":
         print(instructions[instruction])
-        if registers[instructions[instruction][3]] == 0:
+        if registers[stripped_instruction[3]] == 0:
             print("jumped")
-            instruction = int(instructions[instruction][4:]) - 1
+            instruction = int(stripped_instruction[4:]) - 1
         else:
             instruction += 1
         print(registers)
 
-    elif instructions[instruction][:3] == "jnz":
+    elif stripped_instruction[:3] == "jnz":
         print(instructions[instruction])
-        if registers[instructions[instruction][3]] != 0:
+        if registers[stripped_instruction[3]] != 0:
             print("jumped")
-            instruction = int(instructions[instruction][4:]) - 1
+            instruction = int(stripped_instruction[4:]) - 1
         else:
             instruction += 1
         print(registers)
 
-    elif instructions[instruction][:3] == "jmp":
+    elif stripped_instruction[:3] == "jmp":
         print(instructions[instruction])
-        instruction = int(instructions[instruction][3:]) - 1
+        instruction = int(stripped_instruction[3:]) - 1
         print(registers)
 
-    elif instructions[instruction][0] == "hlt":
+    elif stripped_instruction[0] == "hlt":
         print(instructions[instruction])
         running = False
         print(registers)

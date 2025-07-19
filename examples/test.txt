@@ -1,0 +1,1 @@
+inc a,inc a,inc a,inc a,inc a,dec a,jnz a 6
