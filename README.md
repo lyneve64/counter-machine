@@ -11,8 +11,9 @@
 
 ## What will I need to achieve this
 ### Basic Functionality:
--[X] Reading files
--[ ] Interpreting and executing instructions from read files
--[ ] Returning output
+- [X] Reading files
+- [X] Interpreting and executing instructions from read files
+- [X] Returning output
+- [ ] Halt automatically at end of program
 ### Q.O.L:
--[ ] Stepping through instructions
+- [ ] Stepping through instructions
