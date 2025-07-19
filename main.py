@@ -15,7 +15,6 @@ with open(sys.argv[1], newline='') as file:
     reader = csv.reader(file)
     for row in reader:
         instructions.extend(row)
-length_instructions = len(instructions)
 
 while running:
     if instructions[instruction][:3] == "inc":
@@ -82,5 +81,10 @@ while running:
         print("invalid instruction")
         running = False
         print(registers)
+
+    if instruction > len(instructions) - 1:
+        running = False
+        print(registers)
+        
 
 print(registers)
