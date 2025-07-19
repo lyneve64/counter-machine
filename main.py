@@ -18,62 +18,42 @@ with open(sys.argv[1], newline='') as file:
 
 while running:
     if instructions[instruction][:3] == "inc":
-        print("increment")
-        match instructions[instruction][3]:
-            case "a":
-                print("register a")
-                registers["a"] += 1
-            case "b":
-                print("register b")
-                registers["b"] += 1
-            case "c":
-                print("register c")
-                registers["c"] += 1
-            case _:
-                print("invalid register")
+        print(instructions[instruction])
+        registers[instructions[instruction][3]] += 1
         instruction += 1
         print(registers)
 
     elif instructions[instruction][:3] == "dec":
-        print("decrement")
-        match instructions[instruction][3]:
-            case "a":
-                print("register a")
-                registers["a"] -= 1
-            case "b":
-                print("register b")
-                registers["b"] -= 1
-            case "c":
-                print("register c")
-                registers["c"] -= 1
-            case _:
-                print("invalid register")
+        print(instructions[instruction])
+        registers[instructions[instruction][3]] -= 1
         instruction += 1
         print(registers)
 
     elif instructions[instruction][:3] == "jez":
-        print("jump if zero")
+        print(instructions[instruction])
         if registers[instructions[instruction][3]] == 0:
+            print("jumped")
             instruction = int(instructions[instruction][4:]) - 1
         else:
             instruction += 1
         print(registers)
 
     elif instructions[instruction][:3] == "jnz":
-        print("jump if not zero")
+        print(instructions[instruction])
         if registers[instructions[instruction][3]] != 0:
+            print("jumped")
             instruction = int(instructions[instruction][4:]) - 1
         else:
             instruction += 1
         print(registers)
 
     elif instructions[instruction][:3] == "jmp":
-        print("jump")
+        print(instructions[instruction])
         instruction = int(instructions[instruction][3:]) - 1
         print(registers)
 
     elif instructions[instruction][0] == "hlt":
-        print("halt")
+        print(instructions[instruction])
         running = False
         print(registers)
 
@@ -85,6 +65,12 @@ while running:
     if instruction > len(instructions) - 1:
         running = False
         print(registers)
-        
+
+    try:
+        if sys.argv[2] == "debug":
+            input("")
+    except IndexError:
+        pass
+
 
 print(registers)
