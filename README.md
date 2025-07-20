@@ -1,8 +1,12 @@
 # Counter Machine
 
 ## Usage
+### Running a program
 python main.py [FILE] (debug|nothing)
 passing debug makes it run step by step, requiring you to press enter to go to the next instruction, leaving it empty (or passing anything besides debug) will cause it to run normally
+
+### Listing a program's instructions
+python list.py [FILE]
 
 ## Instruction Set
 (Based off of the Minsky instruction set)

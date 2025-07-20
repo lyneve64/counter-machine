@@ -1,3 +1,0 @@
-inc a
-inc b
-inc c
