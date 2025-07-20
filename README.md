@@ -10,8 +10,7 @@ passing debug makes it run step by step, requiring you to press enter to go to t
 - dec(register): Decrement register
 - jez(register)(line): Jump to line if register == 0
 - jnz(register)(line): Jump to line if register != 0
-- jmp(line): Jump to line
-- hlt: Halts the program
+- out(register): Adds the current value of register to a list, which outputs upon program end
 
 ## What will I need to achieve this
 ### Basic Functionality:

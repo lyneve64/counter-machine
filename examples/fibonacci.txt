@@ -1,0 +1,30 @@
+inc b
+inc c
+jez a 6
+dec a
+jnz a 4
+jez b 10
+dec b
+inc a
+jnz b 7
+jez b 13
+dec b
+jnz b 11
+jez c 17
+dec c
+inc b
+jnz c 14
+jez a 21
+dec a
+inc c
+jnz a 18
+jez b 25
+dec b
+inc a
+inc c
+jnz b 22
+dec a
+inc b
+jnz a 26
+out c
+jez a 3

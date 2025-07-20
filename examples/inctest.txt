@@ -1,1 +1,0 @@
-inc a,inc a,inc b,inc c,inc c,inc c,hlt
