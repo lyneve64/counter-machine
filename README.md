@@ -5,6 +5,8 @@
 python main.py [FILE] (debug|nothing)
 passing debug makes it run step by step, requiring you to press enter to go to the next instruction, leaving it empty (or passing anything besides debug) will cause it to run normally
 
+Ctrl + C to exit
+
 ### Listing a program's instructions
 python list.py [FILE]
 
